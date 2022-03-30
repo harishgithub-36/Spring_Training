@@ -21,6 +21,8 @@ public class User {
 	private int age;
 	@Column(name = "salary")
 	private float salary;
+	@Column(name = "department_id")
+	private int departmentId;
 
 	public User() {
 		super();
@@ -64,6 +66,14 @@ public class User {
 
 	public void setSalary(float salary) {
 		this.salary = salary;
+	}
+
+	public int getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
 	}
 
 	@Override

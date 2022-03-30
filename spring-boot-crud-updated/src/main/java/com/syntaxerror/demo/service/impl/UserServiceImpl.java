@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.syntaxerror.demo.dao.UserDao;
 import com.syntaxerror.demo.entity.User;
 import com.syntaxerror.demo.repository.UserRepository;
+import com.syntaxerror.demo.response.UserDepartmentResponse;
 import com.syntaxerror.demo.service.UserService;
 
 @Service
@@ -14,6 +16,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserRepository userRepository;
+
+	@Autowired
+	private UserDao userDao;
 
 	@Override
 	public List<User> getAllUsers() {
@@ -44,6 +49,19 @@ public class UserServiceImpl implements UserService {
 			throw ex;
 		}
 		return deletedUser;
+	}
+
+	@Override
+	public List<User> getUserBySalary(float salary) {
+		// TODO Auto-generated method stub
+		return userRepository.getUserBySalary(salary);
+
+	}
+
+	@Override
+	public List<UserDepartmentResponse> getUserDepartment() {
+		// TODO Auto-generated method stub
+		return userDao.getUserDepartment();
 	}
 
 }
