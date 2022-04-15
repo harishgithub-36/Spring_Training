@@ -28,12 +28,13 @@ public class User {
 		super();
 	}
 
-	public User(int userId, String name, int age, float salary) {
+	public User(int userId, String name, int age, float salary, int departmentId) {
 		super();
 		this.userId = userId;
 		this.name = name;
 		this.age = age;
 		this.salary = salary;
+		this.departmentId = departmentId;
 	}
 
 	public int getUserId() {
@@ -78,7 +79,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "Users [userId=" + userId + ", name=" + name + ", age=" + age + ", salary=" + salary + "]";
+		return "User [userId=" + userId + ", name=" + name + ", age=" + age + ", salary=" + salary + ", departmentId="
+				+ departmentId + "]";
 	}
 
 }

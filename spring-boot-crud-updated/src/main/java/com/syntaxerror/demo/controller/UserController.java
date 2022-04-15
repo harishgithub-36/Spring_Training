@@ -90,4 +90,16 @@ public class UserController {
 		return new ResponseEntity<List<UserDepartmentResponse>>(users, HttpStatus.OK);
 	}
 
+	@GetMapping("/allUserByNameandId/{myname}/{id}")
+	public ResponseEntity<List<User>> getAlluserbynameId(@PathVariable("myname") String name,
+			@PathVariable("id") int id) {
+		List<User> users = null;
+		try {
+			users = userService.getAlluserbynameId(name, id);
+		} catch (Exception ex) {
+			ex.getMessage();
+		}
+		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+	}
+
 }

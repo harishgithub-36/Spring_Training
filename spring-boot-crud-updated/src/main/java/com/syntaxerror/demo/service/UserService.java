@@ -20,4 +20,6 @@ public interface UserService {
 
 	// this method is calling from dao classes
 	public List<UserDepartmentResponse> getUserDepartment();
+
+	public List<User> getAlluserbynameId(String myname, int id);
 }

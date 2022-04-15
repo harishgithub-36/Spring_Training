@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getAllUsers() {
-		return userRepository.findAll();
+		return (List<User>) userRepository.findAll();
 	}
 
 	@Override
@@ -53,15 +53,18 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getUserBySalary(float salary) {
-		// TODO Auto-generated method stub
 		return userRepository.getUserBySalary(salary);
-
 	}
 
 	@Override
 	public List<UserDepartmentResponse> getUserDepartment() {
-		// TODO Auto-generated method stub
 		return userDao.getUserDepartment();
+	}
+
+	@Override
+	public List<User> getAlluserbynameId(String myname, int id) {
+		// TODO Auto-generated method stub
+		return userRepository.getUserByNameandId(myname, id);
 	}
 
 }
